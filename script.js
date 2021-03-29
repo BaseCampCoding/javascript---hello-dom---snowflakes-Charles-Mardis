@@ -4,6 +4,10 @@ const MIN_DURATION = 2000;
 const MAX_DURATION = 5000;
 
 const snowflakesContainer = document.getElementById("snowflakes-container");
+let quantitySlider = document.getElementById("quantity")
+let output = document.getElementById("quantity")
+output.innerHTML = quantitySlider.value
+
 
 setInterval(() => createSnowflake(), 50);
 
@@ -36,3 +40,12 @@ function createSnowflake() {
     )
     .finished.then(() => snowFlake.remove());
 }
+
+quantitySlider.oninput = function () {
+  output.innerHTML = this.value
+}
+
+quantitySlider.addEventListener("input", function() {
+  let x = quantitySlider.value;
+  let quantity = x 
+})
